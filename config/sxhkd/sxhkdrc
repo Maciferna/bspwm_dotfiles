@@ -1,0 +1,68 @@
+
+###############
+##BSPWM basic##
+###############
+
+# Terminal
+super + Return
+	kitty
+# Rofi
+super + space
+	rofi -show drun
+
+#Cerrar ventanas
+super + {_,shift + }w
+	bspc node -{c,k}
+
+#Reiniciar sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd && pgrep dunst | xargs kill && dunst &
+
+#Reiniciar bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+#Cambiar de escritorio
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+########
+##APPS##
+########
+
+# Screenshot
+super + a
+	gnome-screenshot -i
+# Chrome
+super + shift + c
+	google-chrome-stable
+# Discord
+super + shift + d
+	discord
+#Firefox
+super + shift + f
+	firefox
+
+
+
+############                 
+##VENTANAS##
+############
+
+# Cambiar ventana
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Ventanas flotantes
+super + s
+    bspc node -t floating
+
+# Hacer la ventana normal (tiling)
+super + t
+    bspc node -t tiled
+
+# Ventana en fullscreen
+super + f
+    bspc node -t fullscreen
+
