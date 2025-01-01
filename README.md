@@ -1,0 +1,1 @@
+BSPWM dotfiles for ArchLinux
